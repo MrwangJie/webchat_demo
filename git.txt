@@ -1,0 +1,109 @@
+git使用
+ 1、创建GitHub账号  https://github.com
+ 2、git工具下载 官网下载
+ 3、gitHub创建一个文件库
+ 4、设置贡献者 
+     name
+        git config --global user.name "wlj"
+      email 
+       git config --global user.email "wlj"
+
+********git clone url
+
+5、git 的三个区
+	工作区
+	暂存区
+		-作为过渡层
+		-避免误操作
+		-保护工作区和版本区
+		-分支处理
+	版本区（库）
+
+6、git命令 ——git三个区提交步骤
+	①、git status —— 查看状态
+	②、git add ——提交暂存区  
+		方式1、（git add index.html）
+		方式2、（git add . ）  多个提交
+	③、git commit -m ——提交版本库
+		git commit -m "说明"
+	
+	②、③一起提交——git commit -a -m "说明"
+
+7、git命令 ——对比
+	git diff ——工作区与暂存区
+	git diff --cached——暂存区与版本区
+	git diff master(分区名字)——工作区与版本区
+8、git命令 ——撤销
+	①、git reset HEAD index.js（文件名）——暂存区—撤销—工作区
+	②、git checkout -- （文件前与--之间有空格）index.js（文件名）——版本区—撤销—工作区  
+	********* 先从暂存还原如没有才从版本区还原*****
+	③、git commit --amend  误提交想重新提交
+		git commit -m "说明" --amend
+		可git log 查看提交
+
+9、git命令——删除
+	①、git rm index.js（文件名） 暂存区删除（工作区未删除不会成功）
+	②、git rm -f index.js（文件名） 暂存区/工作区全删
+	③、git rm --cached index.js（文件名） 只删除暂存区
+10、git命令——恢复
+	①、git checkout 【commit_id】 <file.name>  指定文件还原
+		commit_id=git log 获取（04f2c8dc521e273c4ef ）
+
+	②、git reset --hard commit_id  指定版本还原
+	③、git reset --hard HEAD^ 之前一个版本
+	④、git reset --hard HEAD^~3 之前三个版本
+	****git reflog 回到现在    查看操作版本记录********
+11、同步远程仓库（即进入GitHub）
+	①、查看
+		git remote—origin（远程仓库名字、默认的、可修改）
+		git remote -v	
+			origin  https://github.com/MrwangJie/cici.git (fetch)
+			origin  https://github.com/MrwangJie/cici.git (push)
+
+	②、git push origin maser（仓库名字+分支）
+12、多人同步代码
+	git fetch   一般首先  ——更新不合并
+		git diff master origin/master ——查看冲突
+		git merge  orgin/master ——查看文件解决冲突
+	git pull——更新并合并
+
+13、开源项目协作
+	fork
+	pull request
+14、git分支
+	①、git branch—— 查看分支
+	②、git branch new1（分支名）——创建分支 
+	③、git checkout new1（分支名）——切换分支
+	④、git checkout -b new2 创建new2分支并切换到new2（②、③简写）
+	⑤、git merge new1（分支名）——合并分支
+	⑥、git branch --merge ——查看合并的分支
+			master
+		 	new1
+	⑦、git branch --no-merge ——查看未合并的分支
+				 	new2
+	⑦、git branch -d new1 ——删除new1分支（删掉合并的分支）
+	⑦、git branch -D new2 ——强制删除new2分支（强制删掉未合并的分支）
+18、github上的标签
+	git tag
+	github上直接创建
+19、创建组织
+	github上创建
+20、创建博客
+	github上创建
+	https://pages.github.com/
+	注意格式的正确性
+
+
+5、查看所有配置
+     git config --list
+ 6、查看提交日志
+ 	git log
+
+
+
+①、
+②、
+③、
+④、
+⑤、
+⑥、
